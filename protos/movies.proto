@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package movies;
+
+service MovieService {
+    rpc getFavoriteMovies(MoviesRequest) returns (stream MovieResponse) {}
+}
+
+message MoviesRequest {
+
+}
+
+message MovieResponse {
+    string movieType = 1;
+    uint32 favouriteMovie = 2;
+}
+
+
